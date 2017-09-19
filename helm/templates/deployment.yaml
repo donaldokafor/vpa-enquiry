@@ -1,0 +1,49 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: {{ .Values.fullName }}
+  labels:
+    chart: "{{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}"
+spec:
+  replicas: {{ .Values.replicaCount }} 
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.fullName }} 
+    spec:
+      containers:
+      - name: {{ .Chart.Name }} 
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        imagePullPolicy: {{ .Values.image.pullPolicy }}    
+        ports:
+        - containerPort: {{ .Values.service.internalPort }} 
+        env:
+        - name: ASPNETCORE_ENVIRONMENT
+          value: Kubernetes
+        volumeMounts:
+        - name: secrets
+          mountPath: /app/secrets
+          readOnly: true
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: {{ .Values.service.internalPort }} 
+          initialDelaySeconds: 90
+          periodSeconds: 60
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: {{ .Values.service.internalPort }} 
+          initialDelaySeconds: 90
+          periodSeconds: 60
+      volumes:
+      - name: secrets
+        secret:
+          secretName: secret-appsettings
+      imagePullSecrets:
+      - name: {{ .Values.imageSecretName }} 
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1

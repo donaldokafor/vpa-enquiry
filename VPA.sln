@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.16
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VPA", "VPA\VPA.csproj", "{BF7E5607-BC0B-4D92-8A97-6F71AC13D828}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{42D5C478-F620-4E89-AB67-BC294EB8D292}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VPA.Test", "VPA.Test\VPA.Test.csproj", "{7EF98B53-B331-474A-B58C-7FC9EFFAD574}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BF7E5607-BC0B-4D92-8A97-6F71AC13D828}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF7E5607-BC0B-4D92-8A97-6F71AC13D828}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF7E5607-BC0B-4D92-8A97-6F71AC13D828}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF7E5607-BC0B-4D92-8A97-6F71AC13D828}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42D5C478-F620-4E89-AB67-BC294EB8D292}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42D5C478-F620-4E89-AB67-BC294EB8D292}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42D5C478-F620-4E89-AB67-BC294EB8D292}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42D5C478-F620-4E89-AB67-BC294EB8D292}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7EF98B53-B331-474A-B58C-7FC9EFFAD574}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EF98B53-B331-474A-B58C-7FC9EFFAD574}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EF98B53-B331-474A-B58C-7FC9EFFAD574}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EF98B53-B331-474A-B58C-7FC9EFFAD574}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
